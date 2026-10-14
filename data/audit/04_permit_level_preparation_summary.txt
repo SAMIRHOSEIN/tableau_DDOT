@@ -3,7 +3,11 @@ RAW QUERY (Step 3): ApplicationDate >= 2025-10-01; 2025-10-01 <= IssueDate < 202
 INTERPRETATION: Also require RenewalDescription='New' (Renewal=1) to exclude renewed permits; this is an explicit assumption that may merit a sensitivity comparison.
 UNIT: one TrackingNumber (= one distinct PermitNumber here), not one API location record.
 DATE SEMANTICS: local calendar dates in America/New_York.
-METRIC: business dates in (Application_Date_DC, Approval_Date_DC], excluding Saturday/Sunday and legal DC public holidays. Same-day=0.
+BUSINESS DAYS CALCULATION METHOD:
+  - Application date is EXCLUDED from the calculation.
+  - Approval date is INCLUDED if it is a business day.
+  - Saturdays, Sundays, and official DC holidays are EXCLUDED.
+  - Same-day approval = 0 business days.
 SPECIAL CLOSURE: Nov 28, 2025 was a DC government administrative closure (not a legal holiday); separate alternative metric excludes it.
 CURRENT STATUS: retained regardless of later expiration/suspension/revocation, as long as IssueDate is in FY2026.
 SEGMENTATION: Work_Category='Multiple Work Categories' if flags overlap; Ward_Segment='Multiple Wards' for permit touching >1 ward.
