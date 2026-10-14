@@ -1,0 +1,39 @@
+DDOT TABLEAU STEP 3: ALL FY2026 NEW-PERMIT API RECORDS
+Filters: ApplicationDate >= 2025-10-01; 2025-10-01 <= IssueDate < 2026-10-01; PermitTypeDescription = 'New'; StatusDescription not filtered.
+No record deduplication has been performed.
+
+D. IDENTIFIER AUDIT (NO RECORDS REMOVED)
+   All matching API records: 28,277
+   TrackingNumber: non-null rows 28,277; unique values 5,378; repeated-ID groups 2,118; rows in repeated-ID groups 25,017
+   PermitNumber: non-null rows 28,277; unique values 5,378; repeated-ID groups 2,118; rows in repeated-ID groups 25,017
+   TrackingNumbers linked to 2+ different PermitNumbers: 0
+   PermitNumbers linked to 2+ different TrackingNumbers: 0
+   Rows sharing ALL 10 core attribute values with another row: 24,929
+   IMPORTANT: Matching attributes do not prove duplicated permits; locations or geometry may differ.
+
+E. DATE QUALITY AUDIT (Washington, DC local calendar dates)
+   Missing/invalid ApplicationDate: 0
+   Missing/invalid LastApprovalDate: 0
+   Missing/invalid IssueDate: 0
+   Approval BEFORE application: 0
+   Approval AFTER issue date: 0
+   Issue BEFORE application: 0
+   These flags need investigation; no rows are excluded in Step 3.
+
+F. CURRENT STATUS OF FY2026-ISSUED NEW-PERMIT API RECORDS
+   Issued: 16,599 records (58.70%)
+   Permit Expired: 11,666 records (41.26%)
+   Suspended: 11 records (0.04%)
+   Revoked: 1 records (0.00%)
+
+G. TOP 10 REPEATED TRACKING NUMBERS (for follow-up inspection)
+   TrackingNumber 502829: 176 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 498676: 176 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 500255: 90 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 500365: 85 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 500941: 85 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 500963: 83 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 497055: 75 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 500713: 68 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 498867: 68 rows | 1 permit numbers | 1 type-detail strings | 1 wards
+   TrackingNumber 500383: 67 rows | 1 permit numbers | 1 type-detail strings | 1 wards

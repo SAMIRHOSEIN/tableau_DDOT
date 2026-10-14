@@ -1,0 +1,65 @@
+DDOT Tableau Assessment | Step 4: FY2026 permit-level analysis preparation
+RAW QUERY (Step 3): ApplicationDate >= 2025-10-01; 2025-10-01 <= IssueDate < 2026-10-01; PermitTypeDescription = 'New'; no current-status filter.
+INTERPRETATION: Also require RenewalDescription='New' (Renewal=1) to exclude renewed permits; this is an explicit assumption that may merit a sensitivity comparison.
+UNIT: one TrackingNumber (= one distinct PermitNumber here), not one API location record.
+DATE SEMANTICS: local calendar dates in America/New_York.
+METRIC: business dates in (Application_Date_DC, Approval_Date_DC], excluding Saturday/Sunday and legal DC public holidays. Same-day=0.
+SPECIAL CLOSURE: Nov 28, 2025 was a DC government administrative closure (not a legal holiday); separate alternative metric excludes it.
+CURRENT STATUS: retained regardless of later expiration/suspension/revocation, as long as IssueDate is in FY2026.
+SEGMENTATION: Work_Category='Multiple Work Categories' if flags overlap; Ward_Segment='Multiple Wards' for permit touching >1 ward.
+OFFICIAL HOLIDAYS: https://edpm.dc.gov/issuances/legal-public-holidays-2025/ ; https://edpm.dc.gov/issuances/legal-public-holidays/
+OFFICIAL CLOSURE: https://edpm.dc.gov/issuances/district-government-closure-friday-november-28-2025/
+
+Raw location-level API records: 28,277
+Unique permits with PermitTypeDescription='New' (includes renewals): 5,378
+Of those, RenewalDescription='Renewal' (excluded from main): 3,353
+Non-renewal permits included in main dataset: 2,025
+Original location records corresponding to those permits: 11,351
+Invalid included permit dates: 0
+Multi-ward permits: 14
+Unknown-ward permits: 137
+Permits involving multiple work categories: 76
+Mean legal-holiday-only BUSINESS DAYS (unweighted permits): 29.329
+Mean business days if erroneously weighted by location-record count: 44.692
+Mean business days INCLUDING Nov 28 administrative closure as a non-business day: 29.309
+
+Current status counts (PERMITS, not API records):
+  Issued: 1,222
+  Permit Expired: 800
+  Suspended: 2
+  Revoked: 1
+Work category counts (PERMITS):
+  Excavation: 1,766
+  Multiple Work Categories: 76
+  Fixture: 63
+  Overhead Work: 61
+  Paving: 41
+  Landscaping: 9
+  Projections: 9
+
+TOP 10 MULTI-LOCATION PERMITS (ALL TYPES, INCLUDING RENEWALS):
+  TrackingNumber 498676: 176 API rows; 176 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 502829: 176 API rows; 176 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 500255: 90 API rows; 90 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 500365: 85 API rows; 85 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 500941: 85 API rows; 85 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 500963: 83 API rows; 83 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 497055: 75 API rows; 75 distinct listed addresses; 1 wards; New
+  TrackingNumber 498867: 68 API rows; 68 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 500713: 68 API rows; 68 distinct listed addresses; 1 wards; Renewal
+  TrackingNumber 498536: 67 API rows; 67 distinct listed addresses; 1 wards; Renewal
+
+TOP 10 MULTI-LOCATION NON-RENEWAL PERMITS (MAIN ANALYSIS):
+  TrackingNumber 497055: 75 API rows; 75 distinct listed addresses; 1 wards
+  TrackingNumber 496072: 64 API rows; 64 distinct listed addresses; 2 wards
+  TrackingNumber 485316: 62 API rows; 62 distinct listed addresses; 1 wards
+  TrackingNumber 494529: 62 API rows; 62 distinct listed addresses; 1 wards
+  TrackingNumber 494525: 52 API rows; 52 distinct listed addresses; 1 wards
+  TrackingNumber 495169: 51 API rows; 51 distinct listed addresses; 1 wards
+  TrackingNumber 488429: 50 API rows; 50 distinct listed addresses; 1 wards
+  TrackingNumber 488414: 48 API rows; 48 distinct listed addresses; 1 wards
+  TrackingNumber 490965: 48 API rows; 48 distinct listed addresses; 1 wards
+  TrackingNumber 494438: 48 API rows; 48 distinct listed addresses; 1 wards
+NOTE: Listed addresses are distinct in the source. They do not necessarily indicate an equal number of physically independent construction projects.
+
+Tableau-ready CSV: G:\My Drive\Amir_Moayyedi_CS12_DataScientist_Tests\2_Tableau_test\tableau_TODD\data\processed\fy2026_new_nonrenewal_permits_tableau.csv
