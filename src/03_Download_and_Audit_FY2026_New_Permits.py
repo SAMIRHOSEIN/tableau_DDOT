@@ -1,17 +1,14 @@
 #%%
-"""DDOT CS12 Tableau Test | Step 3: Download complete FY2026 new-permit records.
-
-No permit-level deduplication or approval-day calculation occurs here.
-
-Run from the project's scripts folder:
-    python 03_Download_and_Audit_FY2026_New_Permits.py
-
-Outputs (relative to the project root):
-    data/raw/fy2026_new_permits_all_api_records.csv
-    data/audit/03_duplicate_tracking_groups.csv
-    data/audit/03_duplicate_permit_groups.csv
-    data/audit/03_data_quality_summary.txt
-"""
+# PURPOSE:
+# Download all construction permit records satisfying the FY2026
+# selection criteria from the DDOT ArcGIS REST API using batch requests.
+# Verify download completeness, examine repeated permit identifiers,
+# and assess the consistency of application, approval, and issue dates.
+# Preserve all source records for subsequent permit-level processing
+# while documenting data-quality issues and duplicate record groups.
+#
+# OUTPUT: Saves the complete raw dataset, duplicate-identifier reports,
+# and a data-quality audit summary.
 
 from pathlib import Path
 import time
@@ -36,7 +33,7 @@ MAX_ATTEMPTS = 4
 
 SCRIPT_FOLDER = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_FOLDER.parent
-RAW_DIR = PROJECT_ROOT / "data" / "raw"
+RAW_DIR = PROJECT_ROOT / "data" / "1_raw"
 AUDIT_DIR = PROJECT_ROOT / "data" / "audit"
 
 session = requests.Session()

@@ -1,0 +1,2276 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='e46937728ab1636d6be9f358cb173b86122c91d46ec69b8d0639a59f1bda1f6b' _.fcp.WorkbookFingerprinting.true...creator-author-id='e46937728ab1636d6be9f358cb173b86122c91d46ec69b8d0639a59f1bda1f6b' _.fcp.WorkbookFingerprinting.true...creator-license-type='free' _.fcp.WorkbookFingerprinting.true...creator-machine-id='2417b79735f3d615030e9aeadab28c60e69f0435cacc1e35aaafdfe3b7155173' _.fcp.WorkbookFingerprinting.true...license-type='free' _.fcp.WorkbookFingerprinting.true...machine-id='2417b79735f3d615030e9aeadab28c60e69f0435cacc1e35aaafdfe3b7155173' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <style-rule element='all'>
+      <format attr='font-family' value='Times New Roman' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource caption='fy2026_new_nonrenewal_permits_tableau' inline='true' name='federated.1nugwql1358oaz172701m0a0vaam' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='fy2026_new_nonrenewal_permits_tableau' name='textscan.11x59sy0a98rbp1g79b7915ld5zu'>
+            <connection class='textscan' directory='H:/My Drive/Amir_Moayyedi_CS12_DataScientist_Tests/2_Tableau_test/tableau_TODD/data/processed' filename='fy2026_new_nonrenewal_permits_tableau.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.11x59sy0a98rbp1g79b7915ld5zu' name='fy2026_new_nonrenewal_permits_tableau.csv' table='[fy2026_new_nonrenewal_permits_tableau#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='TrackingNumber' ordinal='0' />
+            <column datatype='string' name='PermitNumber' ordinal='1' />
+            <column datatype='date' name='Application_Date_DC' ordinal='2' />
+            <column datatype='date' name='Approval_Date_DC' ordinal='3' />
+            <column datatype='date' name='Issue_Date_DC' ordinal='4' />
+            <column datatype='string' name='Application_Month' ordinal='5' />
+            <column datatype='string' name='Issue_Month' ordinal='6' />
+            <column datatype='integer' name='Business_Days_To_Approve' ordinal='7' />
+            <column datatype='integer' name='Business_Days_To_Approve_With_Closure' ordinal='8' />
+            <column datatype='integer' name='Calendar_Days_To_Approve' ordinal='9' />
+            <column datatype='integer' name='DaysToApprove' ordinal='10' />
+            <column datatype='string' name='StatusDescription' ordinal='11' />
+            <column datatype='string' name='PermitTypeDescription' ordinal='12' />
+            <column datatype='string' name='RenewalDescription' ordinal='13' />
+            <column datatype='string' name='TypeDetailNames' ordinal='14' />
+            <column datatype='string' name='Work_Category' ordinal='15' />
+            <column datatype='integer' name='Work_Category_Count' ordinal='16' />
+            <column datatype='string' name='Ward_Segment' ordinal='17' />
+            <column datatype='integer' name='Ward_Count' ordinal='18' />
+            <column datatype='integer' name='Location_Record_Count' ordinal='19' />
+            <column datatype='integer' name='IsExcavation' ordinal='20' />
+            <column datatype='integer' name='IsFixture' ordinal='21' />
+            <column datatype='integer' name='IsPaving' ordinal='22' />
+            <column datatype='integer' name='IsOccupancy' ordinal='23' />
+            <column datatype='integer' name='IsLandscaping' ordinal='24' />
+            <column datatype='integer' name='IsProjections' ordinal='25' />
+            <column datatype='integer' name='IsPSRental' ordinal='26' />
+            <column datatype='integer' name='IsOverHeadWork' ordinal='27' />
+            <column datatype='integer' name='IsAnnualPermit' ordinal='28' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TrackingNumber</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TrackingNumber]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>TrackingNumber</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PermitNumber</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PermitNumber]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>PermitNumber</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Application_Date_DC</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Application_Date_DC]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Application_Date_DC</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Approval_Date_DC</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Approval_Date_DC]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Approval_Date_DC</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Issue_Date_DC</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Issue_Date_DC]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Issue_Date_DC</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Application_Month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Application_Month]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Application_Month</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Issue_Month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Issue_Month]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Issue_Month</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Business_Days_To_Approve</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Business_Days_To_Approve]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Business_Days_To_Approve</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Business_Days_To_Approve_With_Closure</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Business_Days_To_Approve_With_Closure]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Business_Days_To_Approve_With_Closure</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Calendar_Days_To_Approve</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Calendar_Days_To_Approve]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Calendar_Days_To_Approve</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DaysToApprove</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DaysToApprove]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>DaysToApprove</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StatusDescription</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[StatusDescription]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>StatusDescription</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PermitTypeDescription</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PermitTypeDescription]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>PermitTypeDescription</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RenewalDescription</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[RenewalDescription]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>RenewalDescription</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TypeDetailNames</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TypeDetailNames]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>TypeDetailNames</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Work_Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Work_Category]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Work_Category</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Work_Category_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Work_Category_Count]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Work_Category_Count</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ward_Segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ward_Segment]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Ward_Segment</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ward_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ward_Count]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Ward_Count</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location_Record_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Location_Record_Count]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>Location_Record_Count</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsExcavation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsExcavation]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsExcavation</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsFixture</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsFixture]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsFixture</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsPaving</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsPaving]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsPaving</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsOccupancy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsOccupancy]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsOccupancy</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsLandscaping</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsLandscaping]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsLandscaping</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsProjections</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsProjections]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsProjections</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsPSRental</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsPSRental]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsPSRental</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsOverHeadWork</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsOverHeadWork]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsOverHeadWork</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsAnnualPermit</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsAnnualPermit]</local-name>
+            <parent-name>[fy2026_new_nonrenewal_permits_tableau.csv]</parent-name>
+            <remote-alias>IsAnnualPermit</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]&quot;' value='Average Approval Time (Business Days)' />
+        </aliases>
+      </column>
+      <column caption='Application Date DC' datatype='date' name='[Application_Date_DC]' role='dimension' type='ordinal' />
+      <column caption='Application Month' datatype='string' name='[Application_Month]' role='dimension' type='nominal' />
+      <column caption='Approval Date DC' datatype='date' name='[Approval_Date_DC]' role='dimension' type='ordinal' />
+      <column caption='Business Days To Approve' datatype='integer' name='[Business_Days_To_Approve]' role='measure' type='quantitative' />
+      <column caption='Business Days To Approve With Closure' datatype='integer' name='[Business_Days_To_Approve_With_Closure]' role='measure' type='quantitative' />
+      <column caption='Total Permits' datatype='integer' name='[Calculation_2108644207648768]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([TrackingNumber])' />
+      </column>
+      <column caption='Approval Time (Business Days)' datatype='string' name='[Calculation_2108644249436161]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Business_Days_To_Approve] = 0 THEN &quot;01 | 0 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 5 THEN &quot;02 | 1-5 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 10 THEN &quot;03 | 6-10 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 15 THEN &quot;04 | 11-15 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 20 THEN &quot;05 | 16-20 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 25 THEN &quot;06 | 21-25 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 30 THEN &quot;07 | 26-30 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 60 THEN &quot;08 | 31-60 days&quot;&#13;&#10;ELSE &quot;09 | 61+ days&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Location Count Group' datatype='string' name='[Calculation_2108644273909762]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Location_Record_Count] = 1 THEN &quot;01 | 1 record&quot;&#13;&#10;ELSEIF [Location_Record_Count] = 2 THEN &quot;02 | 2 records&quot;&#13;&#10;ELSEIF [Location_Record_Count] &lt;= 5 THEN &quot;03 | 3-5 records&quot;&#13;&#10;ELSEIF [Location_Record_Count] &lt;= 10 THEN &quot;04 | 6-10 records&quot;&#13;&#10;ELSEIF [Location_Record_Count] &lt;= 30 THEN &quot;05 | 11-30 records&quot;&#13;&#10;ELSE &quot;06 | 31+ records&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Approval Duration Group' datatype='string' name='[Calculation_2108644284649475]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Business_Days_To_Approve] &gt; 30 THEN&#13;&#10;    &quot;Over 30 business days&quot;&#13;&#10;ELSE&#13;&#10;    &quot;0-30 business days&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Calendar Days To Approve' datatype='integer' name='[Calendar_Days_To_Approve]' role='measure' type='quantitative' />
+      <column caption='Days To Approve' datatype='integer' name='[DaysToApprove]' role='measure' type='quantitative' />
+      <column caption='Is Annual Permit' datatype='integer' name='[IsAnnualPermit]' role='measure' type='quantitative' />
+      <column caption='Is Excavation' datatype='integer' name='[IsExcavation]' role='measure' type='quantitative' />
+      <column caption='Is Fixture' datatype='integer' name='[IsFixture]' role='measure' type='quantitative' />
+      <column caption='Is Landscaping' datatype='integer' name='[IsLandscaping]' role='measure' type='quantitative' />
+      <column caption='Is Occupancy' datatype='integer' name='[IsOccupancy]' role='measure' type='quantitative' />
+      <column caption='Is Over Head Work' datatype='integer' name='[IsOverHeadWork]' role='measure' type='quantitative' />
+      <column caption='Is PS Rental' datatype='integer' name='[IsPSRental]' role='measure' type='quantitative' />
+      <column caption='Is Paving' datatype='integer' name='[IsPaving]' role='measure' type='quantitative' />
+      <column caption='Is Projections' datatype='integer' name='[IsProjections]' role='measure' type='quantitative' />
+      <column caption='Issue Date DC' datatype='date' name='[Issue_Date_DC]' role='dimension' type='ordinal' />
+      <column caption='Issue Month' datatype='string' name='[Issue_Month]' role='dimension' type='nominal' />
+      <column caption='Location Record Count' datatype='integer' name='[Location_Record_Count]' role='measure' type='quantitative' />
+      <column caption='Permit Number' datatype='string' name='[PermitNumber]' role='dimension' type='nominal' />
+      <column caption='Permit Type Description' datatype='string' name='[PermitTypeDescription]' role='dimension' type='nominal' />
+      <column caption='Renewal Description' datatype='string' name='[RenewalDescription]' role='dimension' type='nominal' />
+      <column caption='Status Description' datatype='string' name='[StatusDescription]' role='dimension' type='nominal' />
+      <column caption='Tracking Number' datatype='integer' name='[TrackingNumber]' role='dimension' type='ordinal' />
+      <column caption='Type Detail Names' datatype='string' name='[TypeDetailNames]' role='dimension' type='nominal' />
+      <column caption='Ward Count' datatype='integer' name='[Ward_Count]' role='measure' type='quantitative' />
+      <column caption='Ward Segment' datatype='string' name='[Ward_Segment]' role='dimension' type='nominal' />
+      <column caption='Work Category' datatype='string' name='[Work_Category]' role='dimension' type='nominal' />
+      <column caption='Work Category Count' datatype='integer' name='[Work_Category_Count]' role='measure' type='quantitative' />
+      <column caption='fy2026_new_nonrenewal_permits_tableau.csv' datatype='table' name='[__tableau_internal_object_id__].[fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA]' role='measure' type='quantitative' />
+      <column-instance column='[Business_Days_To_Approve]' derivation='Avg' name='[avg:Business_Days_To_Approve:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2108644284649475]' derivation='None' name='[none:Calculation_2108644284649475:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Approval Time (Business Days))' hidden='true' name='[Action (Approval Time (Business Days))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_2108644249436161]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Ward Segment)' hidden='true' name='[Action (Ward Segment)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Ward_Segment]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Work Category)' hidden='true' name='[Action (Work Category)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Work_Category]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_2108644284649475:nk]' type='palette'>
+            <map to='#b85c18'>
+              <bucket>&quot;Over 30 business days&quot;</bucket>
+            </map>
+            <map to='#f0c58a'>
+              <bucket>&quot;0-30 business days&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='fy2026_new_nonrenewal_permits_tableau.csv' id='fy2026_new_nonrenewal_permits_tableau.csv_11AC0E956236429EBD499E6AF3EBA2CA'>
+            <properties context=''>
+              <relation connection='textscan.11x59sy0a98rbp1g79b7915ld5zu' name='fy2026_new_nonrenewal_permits_tableau.csv' table='[fy2026_new_nonrenewal_permits_tableau#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='TrackingNumber' ordinal='0' />
+                  <column datatype='string' name='PermitNumber' ordinal='1' />
+                  <column datatype='date' name='Application_Date_DC' ordinal='2' />
+                  <column datatype='date' name='Approval_Date_DC' ordinal='3' />
+                  <column datatype='date' name='Issue_Date_DC' ordinal='4' />
+                  <column datatype='string' name='Application_Month' ordinal='5' />
+                  <column datatype='string' name='Issue_Month' ordinal='6' />
+                  <column datatype='integer' name='Business_Days_To_Approve' ordinal='7' />
+                  <column datatype='integer' name='Business_Days_To_Approve_With_Closure' ordinal='8' />
+                  <column datatype='integer' name='Calendar_Days_To_Approve' ordinal='9' />
+                  <column datatype='integer' name='DaysToApprove' ordinal='10' />
+                  <column datatype='string' name='StatusDescription' ordinal='11' />
+                  <column datatype='string' name='PermitTypeDescription' ordinal='12' />
+                  <column datatype='string' name='RenewalDescription' ordinal='13' />
+                  <column datatype='string' name='TypeDetailNames' ordinal='14' />
+                  <column datatype='string' name='Work_Category' ordinal='15' />
+                  <column datatype='integer' name='Work_Category_Count' ordinal='16' />
+                  <column datatype='string' name='Ward_Segment' ordinal='17' />
+                  <column datatype='integer' name='Ward_Count' ordinal='18' />
+                  <column datatype='integer' name='Location_Record_Count' ordinal='19' />
+                  <column datatype='integer' name='IsExcavation' ordinal='20' />
+                  <column datatype='integer' name='IsFixture' ordinal='21' />
+                  <column datatype='integer' name='IsPaving' ordinal='22' />
+                  <column datatype='integer' name='IsOccupancy' ordinal='23' />
+                  <column datatype='integer' name='IsLandscaping' ordinal='24' />
+                  <column datatype='integer' name='IsProjections' ordinal='25' />
+                  <column datatype='integer' name='IsPSRental' ordinal='26' />
+                  <column datatype='integer' name='IsOverHeadWork' ordinal='27' />
+                  <column datatype='integer' name='IsAnnualPermit' ordinal='28' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_EDAB3113C6084C32B2E80CCDF5A11645]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='01_DDOT_Executive_Overview' type='sheet' worksheet='03_Approval_Time_by_Ward' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='01_DDOT_Executive_Overview' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_58BE804BB3BA4FD9B91212FD7E790C49]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='01_DDOT_Executive_Overview' type='sheet' worksheet='02_Approval_Time_by_Work_Category' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='01_DDOT_Executive_Overview' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='01_Overall_Approval_Performance'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Overall Approval Performance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fy2026_new_nonrenewal_permits_tableau' name='federated.1nugwql1358oaz172701m0a0vaam' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nugwql1358oaz172701m0a0vaam'>
+            <column caption='Business Days To Approve' datatype='integer' name='[Business_Days_To_Approve]' role='measure' type='quantitative' />
+            <column caption='Total Permits' datatype='integer' name='[Calculation_2108644207648768]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([TrackingNumber])' />
+            </column>
+            <column caption='Tracking Number' datatype='integer' name='[TrackingNumber]' role='dimension' type='ordinal' />
+            <column caption='Ward Segment' datatype='string' name='[Ward_Segment]' role='dimension' type='nominal' />
+            <column caption='Work Category' datatype='string' name='[Work_Category]' role='dimension' type='nominal' />
+            <column-instance column='[Business_Days_To_Approve]' derivation='Avg' name='[avg:Business_Days_To_Approve:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2108644207648768]' derivation='User' name='[usr:Calculation_2108644207648768:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1nugwql1358oaz172701m0a0vaam].[usr:Calculation_2108644207648768:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]'>
+            <groupfilter function='level-members' level='[Ward_Segment]' user:ui-action-filter='[Action1_EDAB3113C6084C32B2E80CCDF5A11645]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]'>
+            <groupfilter function='level-members' level='[Work_Category]' user:ui-action-filter='[Action2_58BE804BB3BA4FD9B91212FD7E790C49]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[:Measure Names]</column>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]</column>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' value='n#,##0.00;-#,##0.00' />
+            <format attr='font-size' value='26' />
+            <format attr='font-weight' value='bold' />
+            <format attr='color' value='#000000' />
+            <format attr='vertical-align' data-class='subtotal' value='center' />
+            <format attr='text-align' value='center' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' value='1' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' value='12' />
+            <format attr='font-weight' value='bold' />
+            <format attr='color' value='#000000' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' data-class='subtotal' value='1' />
+            <format attr='border-width' data-class='total' value='1' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='1' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-color' scope='rows' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1nugwql1358oaz172701m0a0vaam].[Multiple Values]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>&lt;</run>
+                <run fontsize='12'>[federated.1nugwql1358oaz172701m0a0vaam].[Multiple Values]</run>
+                <run fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.1nugwql1358oaz172701m0a0vaam].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{6B9B9DEB-7015-412A-AF45-F2A741A3CEA5}' />
+    </worksheet>
+    <worksheet name='02_Approval_Time_by_Work_Category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000'>Approval Time by Work Category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fy2026_new_nonrenewal_permits_tableau' name='federated.1nugwql1358oaz172701m0a0vaam' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nugwql1358oaz172701m0a0vaam'>
+            <column caption='Business Days To Approve' datatype='integer' name='[Business_Days_To_Approve]' role='measure' type='quantitative' />
+            <column caption='Total Permits' datatype='integer' name='[Calculation_2108644207648768]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([TrackingNumber])' />
+            </column>
+            <column caption='Tracking Number' datatype='integer' name='[TrackingNumber]' role='dimension' type='ordinal' />
+            <column caption='Ward Segment' datatype='string' name='[Ward_Segment]' role='dimension' type='nominal' />
+            <column caption='Work Category' datatype='string' name='[Work_Category]' role='dimension' type='nominal' />
+            <column-instance column='[Business_Days_To_Approve]' derivation='Avg' name='[avg:Business_Days_To_Approve:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Work_Category]' derivation='None' name='[none:Work_Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2108644207648768]' derivation='User' name='[usr:Calculation_2108644207648768:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]'>
+            <groupfilter function='level-members' level='[Ward_Segment]' user:ui-action-filter='[Action1_EDAB3113C6084C32B2E80CCDF5A11645]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1nugwql1358oaz172701m0a0vaam].[none:Work_Category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' scope='cols' value='Average Approval Time (Business Days)' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1nugwql1358oaz172701m0a0vaam].[none:Work_Category:nk]' value='204' />
+            <format attr='border-color' data-class='subtotal' value='#000000' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' palette='orange_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-color' scope='rows' value='#000000' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-color' scope='cols' value='#000000' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' />
+              <tooltip column='[federated.1nugwql1358oaz172701m0a0vaam].[usr:Calculation_2108644207648768:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1nugwql1358oaz172701m0a0vaam].[none:Work_Category:nk]</rows>
+        <cols>[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]</cols>
+      </table>
+      <simple-id uuid='{5BD0C8AE-74A8-4385-9453-B52B911CDFE3}' />
+    </worksheet>
+    <worksheet name='03_Approval_Time_by_Ward'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000'>Approval Time by Ward</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fy2026_new_nonrenewal_permits_tableau' name='federated.1nugwql1358oaz172701m0a0vaam' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nugwql1358oaz172701m0a0vaam'>
+            <column caption='Business Days To Approve' datatype='integer' name='[Business_Days_To_Approve]' role='measure' type='quantitative' />
+            <column caption='Total Permits' datatype='integer' name='[Calculation_2108644207648768]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([TrackingNumber])' />
+            </column>
+            <column caption='Tracking Number' datatype='integer' name='[TrackingNumber]' role='dimension' type='ordinal' />
+            <column caption='Ward Segment' datatype='string' name='[Ward_Segment]' role='dimension' type='nominal' />
+            <column caption='Work Category' datatype='string' name='[Work_Category]' role='dimension' type='nominal' />
+            <column-instance column='[Business_Days_To_Approve]' derivation='Avg' name='[avg:Business_Days_To_Approve:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Ward_Segment]' derivation='None' name='[none:Ward_Segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2108644207648768]' derivation='User' name='[usr:Calculation_2108644207648768:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]'>
+            <groupfilter function='level-members' level='[Work_Category]' user:ui-action-filter='[Action2_58BE804BB3BA4FD9B91212FD7E790C49]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1nugwql1358oaz172701m0a0vaam].[none:Ward_Segment:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' scope='cols' value='Avg Approval Time (Business Days)' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' palette='orange_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' />
+              <tooltip column='[federated.1nugwql1358oaz172701m0a0vaam].[usr:Calculation_2108644207648768:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1nugwql1358oaz172701m0a0vaam].[none:Ward_Segment:nk]</rows>
+        <cols>[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]</cols>
+      </table>
+      <simple-id uuid='{0781B66A-C9EE-4392-99B2-186C12C15480}' />
+    </worksheet>
+    <worksheet name='04_Monthly_Approval_Time_Trend3.'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000'>Average Approval Time by Permit Issue Month</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fy2026_new_nonrenewal_permits_tableau' name='federated.1nugwql1358oaz172701m0a0vaam' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nugwql1358oaz172701m0a0vaam'>
+            <column caption='Business Days To Approve' datatype='integer' name='[Business_Days_To_Approve]' role='measure' type='quantitative' />
+            <column caption='Total Permits' datatype='integer' name='[Calculation_2108644207648768]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([TrackingNumber])' />
+            </column>
+            <column caption='Issue Month' datatype='string' name='[Issue_Month]' role='dimension' type='nominal' />
+            <column caption='Tracking Number' datatype='integer' name='[TrackingNumber]' role='dimension' type='ordinal' />
+            <column caption='Ward Segment' datatype='string' name='[Ward_Segment]' role='dimension' type='nominal' />
+            <column caption='Work Category' datatype='string' name='[Work_Category]' role='dimension' type='nominal' />
+            <column-instance column='[Business_Days_To_Approve]' derivation='Avg' name='[avg:Business_Days_To_Approve:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Issue_Month]' derivation='None' name='[none:Issue_Month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2108644207648768]' derivation='User' name='[usr:Calculation_2108644207648768:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]'>
+            <groupfilter function='level-members' level='[Ward_Segment]' user:ui-action-filter='[Action1_EDAB3113C6084C32B2E80CCDF5A11645]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]'>
+            <groupfilter function='level-members' level='[Work_Category]' user:ui-action-filter='[Action2_58BE804BB3BA4FD9B91212FD7E790C49]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]</column>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' scope='rows' value='Avg Approval Time (Business Days)' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <tooltip column='[federated.1nugwql1358oaz172701m0a0vaam].[usr:Calculation_2108644207648768:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]</rows>
+        <cols>[federated.1nugwql1358oaz172701m0a0vaam].[none:Issue_Month:nk]</cols>
+      </table>
+      <simple-id uuid='{DFCE7BD5-3065-4EBE-BBA6-E975C127755C}' />
+    </worksheet>
+    <worksheet name='05_Approval_Time_Distribution'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000'>Distribution of Approval Times</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fy2026_new_nonrenewal_permits_tableau' name='federated.1nugwql1358oaz172701m0a0vaam' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nugwql1358oaz172701m0a0vaam'>
+            <column caption='Business Days To Approve' datatype='integer' name='[Business_Days_To_Approve]' role='measure' type='quantitative' />
+            <column caption='Total Permits' datatype='integer' name='[Calculation_2108644207648768]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([TrackingNumber])' />
+            </column>
+            <column caption='Approval Time (Business Days)' datatype='string' name='[Calculation_2108644249436161]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Business_Days_To_Approve] = 0 THEN &quot;01 | 0 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 5 THEN &quot;02 | 1-5 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 10 THEN &quot;03 | 6-10 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 15 THEN &quot;04 | 11-15 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 20 THEN &quot;05 | 16-20 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 25 THEN &quot;06 | 21-25 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 30 THEN &quot;07 | 26-30 days&quot;&#13;&#10;ELSEIF [Business_Days_To_Approve] &lt;= 60 THEN &quot;08 | 31-60 days&quot;&#13;&#10;ELSE &quot;09 | 61+ days&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Approval Duration Group' datatype='string' name='[Calculation_2108644284649475]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Business_Days_To_Approve] &gt; 30 THEN&#13;&#10;    &quot;Over 30 business days&quot;&#13;&#10;ELSE&#13;&#10;    &quot;0-30 business days&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Tracking Number' datatype='integer' name='[TrackingNumber]' role='dimension' type='ordinal' />
+            <column caption='Ward Segment' datatype='string' name='[Ward_Segment]' role='dimension' type='nominal' />
+            <column caption='Work Category' datatype='string' name='[Work_Category]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2108644249436161]' derivation='None' name='[none:Calculation_2108644249436161:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2108644284649475]' derivation='None' name='[none:Calculation_2108644284649475:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2108644207648768]' derivation='User' name='[pcto:usr:Calculation_2108644207648768:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_2108644207648768]' derivation='User' name='[usr:Calculation_2108644207648768:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]'>
+            <groupfilter function='level-members' level='[Ward_Segment]' user:ui-action-filter='[Action1_EDAB3113C6084C32B2E80CCDF5A11645]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]'>
+            <groupfilter function='level-members' level='[Work_Category]' user:ui-action-filter='[Action2_58BE804BB3BA4FD9B91212FD7E790C49]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Ward Segment)]</column>
+            <column>[federated.1nugwql1358oaz172701m0a0vaam].[Action (Work Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1nugwql1358oaz172701m0a0vaam].[usr:Calculation_2108644207648768:qk]' scope='rows' value='Number of Permits' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1nugwql1358oaz172701m0a0vaam].[none:Calculation_2108644284649475:nk]' />
+              <tooltip column='[federated.1nugwql1358oaz172701m0a0vaam].[pcto:usr:Calculation_2108644207648768:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Approval Time Band:</run>
+                <run bold='true'><![CDATA[<[federated.1nugwql1358oaz172701m0a0vaam].[none:Calculation_2108644249436161:nk]> ]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Number of Permits&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1nugwql1358oaz172701m0a0vaam].[pcto:usr:Calculation_2108644207648768:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Share of Total Permit: </run>
+                <run bold='true'><![CDATA[<[federated.1nugwql1358oaz172701m0a0vaam].[pcto:usr:Calculation_2108644207648768:qk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1nugwql1358oaz172701m0a0vaam].[usr:Calculation_2108644207648768:qk]</rows>
+        <cols>[federated.1nugwql1358oaz172701m0a0vaam].[none:Calculation_2108644249436161:nk]</cols>
+      </table>
+      <simple-id uuid='{192A4928-54D7-49DC-87A3-6D7493A9BB2C}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='01_DDOT_Executive_Overview'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='16'>DDOT | FY2026 Construction Permit Approval Performance </run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>(</run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>New, Non-Renewal Permits | Washington, DC)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='1000' maxwidth='1200' minheight='1000' minwidth='1200' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='86100' id='17' param='vert' type-v2='layout-flow' w='98666' x='667' y='800'>
+            <zone fixed-size='24' h='3200' id='18' is-fixed='true' type-v2='title' w='98666' x='667' y='800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='42' h='5000' id='23' is-fixed='true' name='01_Overall_Approval_Performance' show-title='false' w='98666' x='667' y='4000'>
+              <layout-cache type-h='cell' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='77900' id='15' type-v2='layout-basic' w='98666' x='667' y='9000'>
+              <zone h='18861' id='3' param='vert' type-v2='layout-flow' w='98666' x='667' y='43971'>
+                <zone h='18861' id='13' name='04_Monthly_Approval_Time_Trend3.' w='98666' x='667' y='43971'>
+                  <layout-cache minheight='184' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='34971' id='5' param='horz' type-v2='layout-flow' w='49333' x='50000' y='9000'>
+                <zone h='34971' id='12' name='03_Approval_Time_by_Ward' w='49333' x='50000' y='9000'>
+                  <layout-cache minwidth='200' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='24068' id='7' param='horz' type-v2='layout-flow' w='98666' x='667' y='62832'>
+                <zone h='24068' id='14' name='05_Approval_Time_Distribution' w='98666' x='667' y='62832'>
+                  <layout-cache cell-count-w='9' minheight='203' non-cell-size-w='60' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='34971' id='11' name='02_Approval_Time_by_Work_Category' w='49333' x='667' y='9000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='12300' id='168' type-v2='text' w='98666' x='667' y='86900'>
+            <formatted-text>
+              <run bold='true' fontcolor='#000000' fontsize='12'>Data scope:</run>
+              <run fontcolor='#000000' fontsize='12'> 2,025 distinct FY2026 new, non-renewal construction permits. Approval time excludes weekends and legal DC holidays.</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontsize='12'>Interaction:</run>
+              <run fontcolor='#000000' fontsize='12'> Select a work category or ward to filter the dashboard; clear selections to restore the full dataset.</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontsize='12'>Interpretation:</run>
+              <run fontcolor='#000000' fontsize='12'> Small sample groups require caution. Approval-time bands are analytical groupings, not official DDOT service standards. See the accompanying methodology report for assumptions and limitations.</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='16'>DDOT | FY2026 Construction Permit Approval Performance </run>
+                <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>(</run>
+                <run fontalignment='1' fontcolor='#000000' fontsize='10'>New, Non-Renewal Permits | Washington, DC)</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1200' minheight='1200' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='197' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98400' id='196' param='vert' type-v2='layout-flow' w='98666' x='667' y='800'>
+                <zone fixed-size='24' h='3200' id='18' type-v2='title' w='98666' x='667' y='800'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='42' h='5000' id='23' is-fixed='true' name='01_Overall_Approval_Performance' show-title='false' w='98666' x='667' y='4000'>
+                  <layout-cache type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='34971' id='11' is-fixed='true' name='02_Approval_Time_by_Work_Category' w='49333' x='667' y='9000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='34971' id='12' is-fixed='true' name='03_Approval_Time_by_Ward' w='49333' x='50000' y='9000'>
+                  <layout-cache minwidth='200' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='180' h='18861' id='13' is-fixed='true' name='04_Monthly_Approval_Time_Trend3.' w='98666' x='667' y='43971'>
+                  <layout-cache minheight='184' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='233' h='24068' id='14' is-fixed='true' name='05_Approval_Time_Distribution' w='98666' x='667' y='62832'>
+                  <layout-cache cell-count-w='9' minheight='203' non-cell-size-w='60' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='12300' id='168' type-v2='text' w='98666' x='667' y='86900'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontsize='12'>Data scope:</run>
+                    <run fontcolor='#000000' fontsize='12'> 2,025 distinct FY2026 new, non-renewal construction permits. Approval time excludes weekends and legal DC holidays.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontsize='12'>Interaction:</run>
+                    <run fontcolor='#000000' fontsize='12'> Select a work category or ward to filter the dashboard; clear selections to restore the full dataset.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontsize='12'>Interpretation:</run>
+                    <run fontcolor='#000000' fontsize='12'> Small sample groups require caution. Approval-time bands are analytical groupings, not official DDOT service standards. See the accompanying methodology report for assumptions and limitations.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{559C94A7-FC3C-4BF4-B9B3-3C5C728AB7FA}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='01_Overall_Approval_Performance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[:Measure Names]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0DDC321F-1778-45D8-A8A1-A281F5FCDE10}' />
+    </window>
+    <window class='worksheet' name='02_Approval_Time_by_Work_Category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]</field>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[none:Work_Category:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B646D4E9-9592-4E5A-BFB3-23C5AE9A7D1F}' />
+    </window>
+    <window class='worksheet' name='03_Approval_Time_by_Ward'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[avg:Business_Days_To_Approve:qk]</field>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[none:Ward_Segment:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AB8BD30F-2888-4C08-8488-792E2F6A0A1C}' />
+    </window>
+    <window class='worksheet' name='04_Monthly_Approval_Time_Trend3.'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[none:Issue_Month:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9AB7B9F0-B556-4946-8984-0FB17E8833EA}' />
+    </window>
+    <window class='worksheet' name='05_Approval_Time_Distribution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1nugwql1358oaz172701m0a0vaam].[none:Calculation_2108644284649475:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[none:Calculation_2108644249436161:nk]</field>
+            <field>[federated.1nugwql1358oaz172701m0a0vaam].[none:Calculation_2108644284649475:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C19D84F8-EAAE-4E0F-840B-F9F714C2FBF1}' />
+    </window>
+    <window class='dashboard' maximized='true' name='01_DDOT_Executive_Overview'>
+      <viewpoints>
+        <viewpoint name='01_Overall_Approval_Performance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='02_Approval_Time_by_Work_Category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='03_Approval_Time_by_Ward'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='04_Monthly_Approval_Time_Trend3.'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='05_Approval_Time_Distribution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{FB5D91CD-4D55-4084-9D2B-0A3A3A0AD728}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='01_DDOT_Executive_Overview' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='01_Overall_Approval_Performance' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='02_Approval_Time_by_Work_Category' width='192'>
+      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
+      RU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='03_Approval_Time_by_Ward' width='192'>
+      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
+      RK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='04_Monthly_Approval_Time_Trend3.' width='192'>
+      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
+      UiiQ+QAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='05_Approval_Time_Distribution' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

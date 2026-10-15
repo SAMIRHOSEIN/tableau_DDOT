@@ -1,27 +1,16 @@
 #%%
-"""DDOT Tableau assessment, Step 4: Prepare one row per genuinely new permit.
+# PURPOSE:
+# Transform the downloaded permit records into a validated dataset
+# containing one observation per new, non-renewal construction permit.
+# Verify permit-level consistency, resolve repeated location records,
+# and calculate approval durations in business days, excluding weekends
+# and official DC holidays. Classify permits by work category and ward,
+# evaluate selected assumptions, and document the preparation process.
+# Generate the final dataset used to develop the Tableau dashboard.
+#
+# OUTPUT: Saves the Tableau-ready CSV, holiday records, multi-location
+# permit summaries, data-quality results, and methodology documentation.
 
-Input:  data/raw/fy2026_new_permits_all_api_records.csv (Step 3, unchanged)
-Outputs:
-    data/processed/fy2026_new_nonrenewal_permits_tableau.csv
-    data/audit/04_permit_level_preparation_summary.txt
-    data/audit/04_dc_holidays_used.csv
-    data/audit/04_top_multi_location_permits_all.csv
-    data/audit/04_top_multi_location_permits_nonrenewal.csv
-    docs/04_Methodology_and_Data_Quality.md
-
-Put this file inside <project>/src/, alongside <project>/data/.
-Dependencies: pip install pandas numpy
-
-Assumptions documented in the audit file:
-* 'New' means PermitTypeDescription='New' AND RenewalDescription='New'.
-* Each TrackingNumber/PermitNumber pair represents one permit, independent of
-  how many work locations were returned by the ArcGIS service.
-* Days to approve = business dates strictly AFTER the local application date
-  up to and INCLUDING the local approval date. Same-day approval = 0 days.
-* Main calculation excludes legal DC public holidays, not ad hoc closures.
-  Nov. 28, 2025 DC office closure has a separate sensitivity calculation.
-"""
 from pathlib import Path
 import numpy as np
 import pandas as pd

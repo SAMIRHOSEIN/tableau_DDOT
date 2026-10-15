@@ -1,15 +1,14 @@
 #%%
-"""DDOT CS-12 Tableau assessment: inspect FY2026 new permits.
-
-This script queries a public ArcGIS REST service and prints the exact
-selection rules, matching *record* count, current-status distribution,
-and a 15-record sample. It deliberately does NOT restrict current status
-to 'Issued', because issued permits may subsequently expire or change
-status. No records are deduplicated or exported at this stage.
-
-Dependencies: requests, pandas
-Run: python 02_Explore_FY2026_Permits.py
-"""
+# PURPOSE:
+# Explore construction permit records that meet the FY2026 study
+# requirements, including application dates, issue dates, and permit type.
+# Examine the number of matching API records, review current permit
+# statuses, and inspect sample records to verify the selection criteria.
+# Retain all current statuses because previously issued permits may
+# have subsequently expired, been suspended, or been revoked.
+#
+# OUTPUT: Displays filter criteria, record counts, status summaries,
+# and sample records in the console.
 
 import json
 

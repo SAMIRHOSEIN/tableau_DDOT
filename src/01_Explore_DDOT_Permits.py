@@ -1,5 +1,13 @@
-
 #%%
+# PURPOSE:
+# Conduct an initial exploration of the DDOT Construction Permit
+# ArcGIS REST API to understand the available data and its structure.
+# Retrieve sample records, inspect key attributes, and examine
+# application, approval, and issue dates. This preliminary exploration
+# helps identify relevant fields for the subsequent analysis.
+#
+# OUTPUT: Displays sample records and field names in the console.
+
 import requests
 import pandas as pd
 
