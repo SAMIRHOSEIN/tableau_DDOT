@@ -1,77 +1,136 @@
-# DDOT FY2026 Construction Permit Approval | Tableau Assessment
+# DDOT FY2026 Construction Permit Approval Analysis | Tableau Assessment
 
-## Purpose and deliverable
+**Prepared by:** Amir Moayyedi  
+**Assessment:** DDOT CS-12 Data Scientist — Tableau  
+**Primary deliverable:** [`tableau/DDOT_tableau_test.twbx`](tableau/DDOT_tableau_test.twbx)
 
-This submission analyzes **business days from application to last recorded approval** for new, non-renewal DDOT Public Space Construction Permits issued during fiscal year 2026. It provides an overall average and comparisons by work category, ward, issue month, and approval-duration band. The analysis describes differences; it does **not** estimate causes or imply a DDOT service-level deadline.
+## 1. Project overview
 
-**Start here:** Open `tableau/DDOT_tableau_test.twbx` in Tableau Desktop. The `.twbx` is the portable deliverable and must contain the underlying CSV. The source `.twb` alone is not portable; see the packaging checks below when rebuilding the deliverable. The saved Tableau input is `data/processed/fy2026_new_nonrenewal_permits_tableau.csv`. Read `docs/DDOT_FY2026_Tableau_Assessment.pdf` for the methodology, limitations, and figures; the `.docx` is an editable copy.
+This project estimates the **average number of business days from application to last recorded approval** for new, non-renewal DDOT Public Space Construction Permits issued in fiscal year (FY) 2026. The Tableau dashboard presents the overall average and descriptive comparisons by work category, ward, issue month, and approval-duration group.
 
-## Key findings in the saved assessment snapshot
+The purpose is to help identify segments for follow-up investigation. The comparisons are **descriptive**, not causal, and no analytical threshold presented here should be interpreted as an official DDOT processing standard.
 
-- **2,025 unique permits** (one observation per TrackingNumber/PermitNumber).
-- **29.33 mean business days** to last approval; median **21** days.
-- **762 permits (37.6%)** took more than 30 business days. This 30-day threshold is an analytical reference, **not** an official DDOT standard.
-- All findings refer to the **saved data snapshot**. Refreshing the live API can change the cohort or fields and requires rerunning verification and updating the report/workbook.
+**To review the assessment without running Python:** Open `tableau/DDOT_tableau_test.twbx` in Tableau Desktop, then read `docs/DDOT_FY2026_Tableau_Assessment.pdf` for the methodology, findings, visualizations, and limitations. The `.twbx` contains the processed CSV data used by the workbook.
 
-## Analysis rules and limitations
+## 2. Saved-data results
 
-1. **Source and dates:** Construction Permit layer `https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_APPS/DDOT_TOPS/MapServer/23`. Include applications on or after 2025-10-01 and issue dates from 2025-10-01 through 2026-09-30. Dates are interpreted in `America/New_York` before day-based calculations.
-2. **New, issued permits:** Filter `PermitTypeDescription = 'New'`, and exclude records labeled `RenewalDescription = 'Renewal'`. The additional `RenewalDescription = 'New'` criterion is an explicit interpretation of the assessment's word **new**. A permit with a FY2026 issue date remains in scope even if its *current* status later became `Permit Expired`, `Suspended`, or `Revoked`.
-3. **Permit-level analysis:** Source API records describe permit locations, and many `TrackingNumber` values repeat. Only one permit-level record contributes to each overall/category/ward mean. Keep location counts and multi-ward coverage separately. Do not average all original location records as if each were an independent permit.
-4. **Approval milestone:** `LastApprovalDate` is treated as the recorded approval event. This is an approximation of the complete workflow, not evidence about time spent by DDOT versus waiting for applicant action.
-5. **Business-day convention:** Count Monday through Friday **after** the local application date through the local last-approval date, excluding statutory/observed DC legal holidays. Same-day approval is zero. November 28, 2025, an additional administrative office closure, is excluded only in a *separate sensitivity metric*, not the primary KPI. Dates/holidays are documented in `src/04_Prepare_Tableau_Permit_Level_Data.py` and `data/audit/04_dc_holidays_used.csv`.
-6. **Segmentation:** Permit activity flags define `Work_Category`; overlapping flags are `Multiple Work Categories`. Ward is based on all recorded permit locations; multiple wards are `Multiple Wards`, and no known ward is `Unknown`. Comparisons are descriptive and unadjusted for application complexity or case mix. Small categories/monthly cohorts should be interpreted cautiously.
+| Measure | Result |
+|---|---:|
+| Location-level API records downloaded | 28,277 |
+| Unique permits with `PermitTypeDescription = 'New'`, before excluding renewals | 5,378 |
+| Unique new, non-renewal permits in the final analysis | **2,025** |
+| Mean business days to last approval | **29.33** |
+| Median business days to last approval | **21** |
+| Permits with more than 30 business days | **762 (37.6%)** |
 
-## Folder guide
+These figures describe the **included data snapshot**, not an automatically updating live dashboard. Re-downloading the source in the future may change the records and results.
 
-| Path | Purpose |
-|---|---|
-| `tableau/DDOT_tableau_test.twbx` | **Required packaged, portable workbook** (create and test in Tableau Desktop) |
-| `tableau/DDOT_tableau_test.twb` | Optional editable/unpackaged workbook source; has a local CSV connection and is **not** a substitute for `.twbx` |
-| `data/processed/fy2026_new_nonrenewal_permits_tableau.csv` | Saved 2,025-row, 29-column Tableau input |
-| `data/audit/` | Download checks, holiday reference, and preparation summaries |
-| `docs/DDOT_FY2026_Tableau_Assessment.pdf` | Primary technical report |
-| `docs/DDOT_FY2026_Tableau_Assessment.docx` | Editable version of the same report |
-| `src/01_Explore_DDOT_Permits.py` | Initial API and field exploration (optional) |
-| `src/02_Explore_FY2026_Permits.py` | FY2026 source-filter exploration (optional) |
-| `src/03_Download_and_Audit_FY2026_New_Permits.py` | Optional full raw-data download and record-level audit; requires network |
-| `src/04_Prepare_Tableau_Permit_Level_Data.py` | Transform the saved raw CSV into permit-level Tableau data; requires `data/raw/...csv` |
-| `data/raw/fy2026_new_permits_all_api_records.csv` | Optional original 28,277-row source snapshot for **private ZIP only**, needed to reproduce Step 4 without downloading again |
+## 3. Data source, population, and calculation
 
-## How to reproduce the data on Windows 11
+**Source:** DDOT Construction Permits, DCGIS ArcGIS REST service, layer 23:  
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_APPS/DDOT_TOPS/MapServer/23
 
-Install **Python 3.10+** and use the following from the project root (`tableau_TODD`). In PowerShell:
+**Selection criteria:**
+
+- Application date on or after October 1, 2025.
+- Issue date between October 1, 2025, and September 30, 2026, inclusive.
+- `PermitTypeDescription = 'New'`.
+- Additional explicit interpretation of *new*: retain `RenewalDescription = 'New'` (the source encodes this as `Renewal = 1`) and exclude renewals. This interpretation is documented because the assessment did not supply a data dictionary.
+- Do not filter by *current* status. A permit issued during FY2026 remains included even if its status subsequently changed to expired, suspended, or revoked.
+
+**Unit of analysis:** One distinct permit (`TrackingNumber`, corresponding one-to-one with `PermitNumber` in this snapshot). The API contains multiple location records for some permits. These are checked and collapsed to one permit-level observation so multi-location permits do not receive disproportionate weight in averages. Location counts and ward coverage are retained for context.
+
+**Business-day KPI:** `Business_Days_To_Approve` is calculated from the DC-local application date to the DC-local `LastApprovalDate`. The application date is excluded; the approval date is included when it is a business day. Saturdays, Sundays, and applicable District legal/observed holidays are excluded. A same-day approval has zero business days. November 28, 2025, a special administrative office closure, is excluded only in a **separate sensitivity metric**, not in the primary KPI.
+
+`LastApprovalDate` is the available approval milestone. The resulting duration is not a measure of DDOT-only staff processing time; it can include other steps and waiting periods. The source's `DaysToApprove` field is retained in the processed dataset for reference, but is **not** the business-day KPI used in the dashboard.
+
+**Segmentation:** Overlapping work-type flags are grouped as `Multiple Work Categories`; permits spanning multiple wards are labeled `Multiple Wards`; records without a known ward are labeled `Unknown`. These choices avoid assigning a multi-location or multi-category permit arbitrarily to one category.
+
+## 4. Project files
+
+```text
+tableau_TODD/
+├── README.md
+├── requirements.txt
+├── src/
+│   ├── 01_Explore_DDOT_Permits.py
+│   ├── 02_Explore_FY2026_Permits.py
+│   ├── 03_Download_and_Audit_FY2026_New_Permits.py
+│   └── 04_Prepare_Tableau_Permit_Level_Data.py
+├── data/
+│   ├── raw/
+│   │   └── fy2026_new_permits_all_api_records.csv
+│   ├── processed/
+│   │   └── fy2026_new_nonrenewal_permits_tableau.csv
+│   └── audit/
+│       └── [download, duplicate-ID, holiday, and preparation checks]
+├── tableau/
+│   ├── DDOT_tableau_test.twbx
+│   └── DDOT_tableau_test.twb
+└── docs/
+    ├── DDOT_FY2026_Tableau_Assessment.pdf
+    └── DDOT_FY2026_Tableau_Assessment.docx
+```
+
+- **`.twbx`**: self-contained packaged Tableau workbook, with embedded processed CSV; **use this file for evaluation**.
+- **`.twb`**: unpackaged Tableau source file, retained for editing; its local data path may not work on a different computer. It is not a substitute for `.twbx`.
+- **`data/raw/`**: saved original API extraction, provided to allow offline reproduction of the processing step.
+- **`data/processed/`**: final 2,025-row, 29-column Tableau input.
+- **`data/audit/`**: traceability and validation results, including duplicate-identifier summaries and the DC holiday list.
+- **`docs/`**: technical report as PDF and editable Word document. Script 04 also generates `docs/04_Methodology_and_Data_Quality.md` when run; this extra generated document need not be present in the submitted snapshot.
+
+## 5. Reproduce the results (Windows 11)
+
+**Requirements:** Python 3.10 or later and the packages listed in `requirements.txt` (`numpy`, `pandas`, `requests`). Tableau Desktop is required to open or edit the workbook and is installed separately.
+
+Open PowerShell **in the `tableau_TODD` directory**, then run:
 
 ```powershell
 py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
-# With the included raw CSV, prepare the saved Tableau input without internet:
-python src/04_Prepare_Tableau_Permit_Level_Data.py
-
-# OPTIONAL: Download a fresh version from the public DDOT ArcGIS API first:
-# python src/03_Download_and_Audit_FY2026_New_Permits.py
-# python src/04_Prepare_Tableau_Permit_Level_Data.py
+# Re-create the Tableau input and audits from the included raw CSV (no internet required):
+.\.venv\Scripts\python.exe src/04_Prepare_Tableau_Permit_Level_Data.py
 ```
 
-All scripts use `pathlib` to resolve paths from their own locations. Step 3 writes `data/raw/fy2026_new_permits_all_api_records.csv`; Step 4 reads **that same path** and generates the processed file, audits, and `docs/04_Methodology_and_Data_Quality.md`. Steps 1 and 2 only print exploratory results. Network access to the DCGIS REST endpoint is needed for Steps 1-3; **Step 4 runs offline if the raw CSV is present**.
+Script 04 reads `data/raw/fy2026_new_permits_all_api_records.csv` and writes:
 
-After rerunning Step 4, reopen Tableau and refresh the CSV connection if needed. The final report and dashboard labels refer to the documented saved snapshot, so do not regenerate the input immediately before submission without validating the results again.
+- `data/processed/fy2026_new_nonrenewal_permits_tableau.csv`;
+- `data/audit/04_permit_level_preparation_summary.txt` and associated holiday/multi-location audit CSV files;
+- `docs/04_Methodology_and_Data_Quality.md`.
 
-## Make and test the required packaged workbook
+With the provided raw snapshot, the expected output is **2,025 permits**, **29 columns**, and approximately **29.33 mean business days**. Script 04 performs input validation and stops if required fields or permit-level consistency checks fail.
 
-1. Open `tableau/DDOT_tableau_test.twb` on the computer that has the project data (if prompted, reconnect it to `data/processed/fy2026_new_nonrenewal_permits_tableau.csv`).
-2. In Tableau Desktop choose **File → Save As** and save a **Tableau Packaged Workbook (`.twbx`)** as `tableau/DDOT_tableau_test.twbx`. Ensure the CSV data source is included in the package.
-3. Close Tableau, temporarily rename or move your local `data/processed/` directory, then open the saved `.twbx`. The five worksheets and the dashboard should display **2,025** permits and an overall mean of **29.33** business days without a missing-file prompt. Restore the processed directory afterward.
-4. Test dashboard selections, clear filters, and check title and footnote text. Use the `.twbx` in the final assessment ZIP even if you also keep the `.twb` source.
+**Optional live-source workflow** (requires access to the DCGIS API):
 
-## Data sharing and version control
+```powershell
+.\.venv\Scripts\python.exe src/01_Explore_DDOT_Permits.py
+.\.venv\Scripts\python.exe src/02_Explore_FY2026_Permits.py
+.\.venv\Scripts\python.exe src/03_Download_and_Audit_FY2026_New_Permits.py
+.\.venv\Scripts\python.exe src/04_Prepare_Tableau_Permit_Level_Data.py
+```
 
-The source is publicly available according to DDOT's assessment, and DDOT permits a supplementary GitHub link, but the **full raw CSV contains named people/organizations and precise addresses**, and the existing repository may retain raw data in **past commits**. **Do not publish the existing repository or make it public without reviewing and removing sensitive/raw files from all exposed history and checking applicable data terms.** This project's `.gitignore` excludes `data/raw/` for future Git additions; it does **not** delete material already committed.
+Steps 01 and 02 are exploratory and print information to the terminal. Step 03 downloads matching API records to `data/raw/` and generates the initial data-quality audits. Step 04 uses those records to generate the final Tableau-ready dataset. **Step 03 overwrites the saved raw CSV with a fresh download**; if the live source has changed, results may differ from the submitted report and packaged workbook. For verification of the *submitted* findings, run **Step 04 only** using the included raw CSV.
 
-The private assessment ZIP can retain the raw CSV to support offline reproduction. For a public portfolio repository, prefer the final processed, purpose-limited CSV, scripts, report, and workbook, after checking that the workbook package and commit history also contain no raw or unintended personal information. Keep the Git repository's `.git/` directory **out of the ZIP sent to DDOT**.
+All project file paths used by Scripts 03 and 04 are resolved relative to the script directory, rather than depending on the original author's computer or drive letter.
 
-## Required submission naming
+## 6. Tableau workbook verification
 
-Submit a parent `FirstName_MiddleInitial_LastName_CS12_DataScientist_Tests.zip` containing separate per-test archives named `FirstName_MiddleInitial_LastName_Tableau.zip`, `FirstName_MiddleInitial_LastName_GIS.zip`, and `FirstName_MiddleInitial_LastName_Python.zip` (include only the tests you are submitting). This project folder is the *contents* of the Tableau-specific ZIP and should not include a `.git/` directory. DDOT's instructions govern final submission.
+1. Open `tableau/DDOT_tableau_test.twbx` in Tableau Desktop. The packaged workbook contains **five worksheets and one dashboard**.
+2. Confirm that the workbook opens without prompting for a local `H:` or `G:` drive and shows the saved analysis of **2,025 permits** with an overall average of approximately **29.33 business days**.
+3. Check the work-category, ward, monthly, and duration-group views and try the dashboard's interactive filters.
+4. If editing the unpackaged `.twb`, reconnect its data source to `data/processed/fy2026_new_nonrenewal_permits_tableau.csv`, then save a new **Tableau Packaged Workbook (`.twbx`)**. Reopen the `.twbx` without relying on the original CSV path before sharing it.
+
+## 7. Interpretation and responsible sharing
+
+These descriptive comparisons do not adjust for permit complexity, staffing, applicant responses, or other possible explanatory factors. Small categories or periods may have unstable averages. The report explains the assumptions and additional sensitivity checks.
+
+The full raw CSV includes potentially identifying owner, applicant, permittee, and address information. Retain it in the private DDOT submission when needed for offline reproduction, but **review applicable source terms and data content before publishing the raw CSV, workbook contents, or existing Git history in a public repository**. The `.git/` directory itself is not part of the deliverable and should be excluded from the ZIP sent to DDOT.
+
+## 8. Submission
+
+The Tableau deliverable should be packaged as a separate ZIP according to the assessment's naming pattern:
+
+`FirstName_MiddleInitial_LastName_Tableau.zip`
+
+It should be placed in the overall `FirstName_MiddleInitial_LastName_CS12_DataScientist_Tests.zip` package with whichever other assessment components are being submitted. The official DDOT assessment instructions take precedence if any packaging details change.
