@@ -299,7 +299,8 @@ def main():
         "NOTE: Listed addresses are distinct in the source. They do not necessarily"
         " indicate an equal number of physically independent construction projects.",
         "",
-        f"Tableau-ready CSV: {csv_path}",
+        # f"Tableau-ready CSV: {csv_path}",
+        f"Tableau-ready CSV: data/processed/{csv_path.name}",
     ]
     report_path = AUDIT_DIR / "04_permit_level_preparation_summary.txt"
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")

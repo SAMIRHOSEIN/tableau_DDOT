@@ -33,7 +33,7 @@ MAX_ATTEMPTS = 4
 
 SCRIPT_FOLDER = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_FOLDER.parent
-RAW_DIR = PROJECT_ROOT / "data" / "1_raw"
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
 AUDIT_DIR = PROJECT_ROOT / "data" / "audit"
 
 session = requests.Session()
